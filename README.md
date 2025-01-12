@@ -1,71 +1,68 @@
 # Snake Game - README
 
-## Overview
-This project is a console-based Snake game implemented in C++. 
-The goal is to control the snake, avoid collisions with walls and itself, 
-and collect food to achieve the highest possible score. The game ends when the snake collides
-with either one of the walls or itself.
+## Opcenito:
+Ovo je konzolna aplikacija Snake game implemntirana u C++ programskom jeziku dizajnirana za Windows operativni sustav. 
+Cilj igre je upravljati zmijom izbjegavajuci sudar sa zidom ili sa tijelom zmije i skupljajuci hranu postici sto veci rezultat.
+Igra zavrsava sudarom zmije sa zidom ili sa vlastitim tijelom.
 
-## Features
-- ASCII-based graphical representation of the game.
-- Control the snake using keyboard keys (`w`, `a`, `s`, `d`, 0 to end the game).
-- Random food generation on the board.
-- Collision detection:
-  - Wall collision.
-  - Self-collision.
-- Displays the current score in real-time.
+## Svojstva:
+- Grafička reprezentacija igre bazirana na ASCII simbolima
+- Upravljanje zmijom pritiscima na tipke na tastaturi (`w`, `a`, `s`, `d`, 0 za kraj)
+- Slučajno generiranje hrane na području igrališta
+- Detekcija sudara:
+  - sa zidom
+  - sa vlastitim tijelom
+- Prikaz rezultata u realnom vremenu
 
-## Requirements
-- **Operating System:** Windows 10 or newer
+## Potrebno:
+- **Operativni sustav:** Windows 10 ili noviji
 - **Compiler/IDE:** Visual Studio 2022
-- **Additional Requirements:** "Desktop development with C++" workload installed in Visual Studio.
+- **Dodatno:** "Desktop development with C++" workload instaliran u Visual Studio.
 
-## How to Run
+- ## Upute za pokretanje:
 
-### Step 1: Clone or Download the Project
-1. Clone the repository or download the `.cpp` file to your local machine.
+### Korak 1: Kopiraj kod ili download file
+1. Ako je kod kopiran, otvori novi file u text editoru po svom izboru. Zalijepi kod i spremi ga kao imepozelji.cpp na svoje računalo u direktorij po želji.
+   Kreiraj novi projekt i desnim klikom na ime projekta u solution exploreru.
 
-### Step 2: Open the Project in Visual Studio
-1. Open Visual Studio 2022.
-2. Create a new project:
-   - Choose **Console App (C++)**.
-   - Enter a name for the project (e.g., `SnakeGame`).
-3. Replace the default content of `Source.cpp` with the code from the downloaded `snake.cpp` file.
-4. Run with CTRL+f5
+### Korak 2: Otvaranje projekta u Visual Studio 2022:
+1. Otvori Visual Studio 2022.
+2. Kreiraj novi projekt:
+   - Izaberi ** (C++)**
+   - Unesi ime projekta (npr `SnakeGame`)
+3. Zalijepi sadrzaj `Source.cpp` datoteke kodom koji si kopirao iz `snake.cpp` datoteke.
+4. Klikni Build Solution i onda pritisni CTRL+F% na tipkovnici za pokretanje.
 
+## Pravila igre
+1. **Tipke:**
+   - `w`: Kreći se prema gornjoj strani ekrana
+   - `a`: Kreći se prema lijevoj strani ekrana
+   - `s`: Kreći se prema donjoj strani ekrana
+   - `d`: Kreći se prema desnoj strani ekrana
+   - `x`: Kraj igre
+2. Izbjegavaj sudare sa zidovima ili tijelom zmije
+3. Skupljaj hranu (*) i povećaj rezultat što je više moguće
+4. Igra završava sudarom glave zmije sa zidom ili vlastitim tijelom
+## Struktura projekta
+- **SnakeGame:** Klasa koja implementira logiku igre
+- **Pixel:** Bazna klasa za različite tipove pixela u igri (npr zid, hrana, glava zmije, tijelo zmije).
+- **Iznimke:**
+  - `HitTheWallEx`: Indikator sudara zmije sa zidom
+  - `SelfCollisionEx`: Indikator sudara zmije sa vlastitim tijelom
 
-## Game Rules
-1. **Controls:**
-   - `W`: Move up
-   - `A`: Move left
-   - `S`: Move down
-   - `D`: Move right
-   - `X`: End the game
-2. Avoid collisions with walls and your own body.
-3. Collect food (`*`) to increase your score and snake length.
-4. The game ends upon collision with a wall or the snake’s body.
+## Prilagodba dimenzija igrališta
+- Igra se može prilagoditi  promjenom 'visina' i 'sirina' varijabli u klasi SnakeGame koje označavaju dimenzije igrališta
+- Za prilagodbu brzine igre promijeni vrijednost u argumentu `Sleep()` funkcije u `Run()` metodi
 
-## Project Structure
-- **SnakeGame:** The main class that implements the game logic.
-- **Pixel:** Base class for different pixel types in the game (e.g., wall, food, snake body, snake head).
-- **Exceptions:**
-  - `HitTheWallEx`: Indicates a collision with a wall.
-  - `SelfCollisionEx`: Indicates a collision with the snake’s body.
+## Moguci problemi
+- **Problem:** "definicija funkcije `_getch()` nije pronađena."
+  - **Rješenje:** Provjeri je li `<conio.h>` header file uključen u projekt.
+- **Problem:** "Kod nije izvediv na Linux i macOS"
+  - **Napomena:** Kod je dizajniran da radi na Windows platformi i koristi `<windows.h>`.
 
-## Customization
-- You can adjust the game board dimensions by modifying the `sirina` and `visina` variables in the `SnakeGame` class.
-- To change the game speed, adjust the value in the `Sleep()` function in the `Run()` method.
-
-## Troubleshooting
-- **Problem:** "`_getch()` function not recognized."
-  - **Solution:** Ensure the `<conio.h>` header file is included.
-- **Problem:** "Code doesn't work on Linux or macOS."
-  - **Solution:** The code is designed for Windows and uses platform-specific libraries such as `<windows.h>`.
-- **Problem:** "`.exe` file not found."
-  - **Solution:**
-    1. Verify there are no build errors.
-    2. Check the output directory in **Project Properties**:
-       - Right-click on the project > **Properties**.
-       - Navigate to **Configuration Properties > General**.
-       - Ensure the **Output Directory** is correct.
-    3. Rebuild the project.
+## Moguca poboljšanja koda
+- Instalacija PDCurses biblioteke radi poboljšanja grafičkih značajki igre
+- Razdvajanje centraliziranog koda u pojedine .h i .cpp datoteke
+  
+## Moguca nadogradnja igre
+Uvođenje dodatnih lakših i težih nivoa igrališta, npr propusni zidovi kao lakši nivo i prepreke na igralištu kao teži nivo
