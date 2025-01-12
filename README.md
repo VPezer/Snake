@@ -1,9 +1,9 @@
 # Snake Game - README
 
 ## Opcenito:
-Ovo je konzolna aplikacija Snake game implemntirana u C++ programskom jeziku dizajnirana za Windows operativni sustav. 
-Cilj igre je upravljati zmijom izbjegavajuci sudar sa zidom ili sa tijelom zmije i skupljajuci hranu postici sto veci rezultat.
-Igra zavrsava sudarom zmije sa zidom ili sa vlastitim tijelom.
+Ovo je konzolna aplikacija Snake game implemntirana u C++ programskom jeziku dizajnirana za Windows 10 ili kasniji OS. 
+Cilj igre je upravljati zmijom izbjegavajući sudar sa zidom ili sa tijelom zmije i skupljajući hranu postići sto veći rezultat.
+Igra završava sudarom zmije sa zidom ili sa vlastitim tijelom.
 
 ## Svojstva:
 - Grafička reprezentacija igre bazirana na ASCII simbolima
@@ -23,7 +23,8 @@ Igra zavrsava sudarom zmije sa zidom ili sa vlastitim tijelom.
 
 ### Korak 1: Kopiraj kod ili download file
 1. Ako je kod kopiran, otvori novi file u text editoru po svom izboru. Zalijepi kod i spremi ga kao imepozelji.cpp na svoje računalo u direktorij po želji.
-   Kreiraj novi projekt i desnim klikom na ime projekta u solution exploreru.
+   Kreiraj novi projekt i desnim klikom na ime projekta u solution exploreru izaberi 'Add existing file', pronađi .cpp datoteku na svom računalu i učitaj ju. Build
+   Solution i CTRL+F5 za pokretanje
 
 ### Korak 2: Otvaranje projekta u Visual Studio 2022:
 1. Otvori Visual Studio 2022.
